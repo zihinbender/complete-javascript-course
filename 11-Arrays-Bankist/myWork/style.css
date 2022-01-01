@@ -1,9 +1,4 @@
-/*
- * Use this CSS to learn some intersting techniques,
- * in case you're wondering how I built the UI.
- * Have fun! 😁
- */
-
+/* GENERAL */
 * {
   margin: 0;
   padding: 0;
@@ -16,13 +11,14 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #444;
   background-color: #f3f3f3;
   height: 100vh;
   padding: 2rem;
 }
 
+/* NAV */
 nav {
   display: flex;
   justify-content: space-between;
@@ -31,22 +27,22 @@ nav {
 }
 
 .welcome {
-  font-size: 1.9rem;
+  font-size: 2rem;
   font-weight: 500;
 }
 
 .logo {
-  height: 5.25rem;
+  height: 5rem;
 }
 
 .login {
   display: flex;
 }
 
-.login__input {
+.login-input {
   border: none;
   padding: 0.5rem 2rem;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-family: inherit;
   text-align: center;
   width: 12rem;
@@ -57,26 +53,26 @@ nav {
   transition: all 0.3s;
 }
 
-.login__input:focus {
+.login-input:focus {
   outline: none;
   border: 1px solid #ccc;
 }
 
-.login__input::placeholder {
+.login-input::placeholder {
   color: #bbb;
 }
 
-.login__btn {
+.login-btn {
   border: none;
   background: none;
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: inherit;
   cursor: pointer;
   transition: all 0.3s;
 }
 
-.login__btn:hover,
-.login__btn:focus,
+.login-btn:hover,
+.login-btn:focus,
 .btn--sort:hover,
 .btn--sort:focus {
   outline: none;
@@ -88,18 +84,14 @@ nav {
   position: relative;
   max-width: 100rem;
   margin: 4rem auto;
-  display: grid;
-  grid-template-columns: 4fr 3fr;
-  grid-template-rows: auto repeat(3, 15rem) auto;
-  gap: 2rem;
 
   /* NOTE This creates the fade in/out anumation */
   /* opacity: 0; */
   transition: all 1s;
 }
 
+/* BALANCE */
 .balance {
-  grid-column: 1 / span 2;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -124,17 +116,17 @@ nav {
 
 /* MOVEMENTS */
 .movements {
-  grid-row: 2 / span 3;
   background-color: #fff;
   border-radius: 1rem;
   overflow: scroll;
+  padding: 0;
 }
 
 .movements__row {
   padding: 2.25rem 4rem;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #eee;
+  border: 1px solid #eee;
 }
 
 .movements__type {
@@ -147,13 +139,6 @@ nav {
   margin-right: 2rem;
 }
 
-.movements__date {
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: #666;
-}
-
 .movements__type--deposit {
   background-image: linear-gradient(to top left, #39b385, #9be15d);
 }
@@ -162,48 +147,16 @@ nav {
   background-image: linear-gradient(to top left, #e52a5a, #ff585f);
 }
 
+.movements__date {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #666;
+}
+
 .movements__value {
   font-size: 1.7rem;
   margin-left: auto;
-}
-
-/* SUMMARY */
-.summary {
-  grid-row: 5 / 6;
-  display: flex;
-  align-items: baseline;
-  padding: 0 0.3rem;
-  margin-top: 1rem;
-}
-
-.summary__label {
-  font-size: 1.2rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-right: 0.8rem;
-}
-
-.summary__value {
-  font-size: 2.2rem;
-  margin-right: 2.5rem;
-}
-
-.summary__value--in,
-.summary__value--interest {
-  color: #66c873;
-}
-
-.summary__value--out {
-  color: #f5465d;
-}
-
-.btn--sort {
-  margin-left: auto;
-  border: none;
-  background: none;
-  font-size: 1.3rem;
-  font-weight: 500;
-  cursor: pointer;
 }
 
 /* OPERATIONS */
@@ -211,6 +164,7 @@ nav {
   border-radius: 1rem;
   padding: 3rem 4rem;
   color: #333;
+  margin-bottom: 4rem;
 }
 
 .operation--transfer {
@@ -227,7 +181,7 @@ nav {
 
 h2 {
   margin-bottom: 1.5rem;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #333;
 }
@@ -285,6 +239,46 @@ h2 {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+/* SUMMARY */
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding: 0 0.3rem;
+  margin-top: 1rem;
+}
+
+.summary__label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 0.8rem;
+}
+
+.summary__value {
+  font-size: 2.2rem;
+  margin-right: 2.5rem;
+}
+
+.summary__value--in,
+.summary__value--interest {
+  color: #66c873;
+}
+
+.summary__value--out {
+  color: #f5465d;
+}
+
+.btn--sort {
+  margin-left: auto;
+  border: none;
+  background: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* LOGOUT */
 .logout-timer {
   padding: 0 0.3rem;
   margin-top: 1.9rem;
